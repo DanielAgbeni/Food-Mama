@@ -1,0 +1,16 @@
+/** @format */
+
+.typing-animation {
+	font-family: 'Arial', sans-serif;
+	font-size: 18px;
+}
+
+@keyframes blink {
+	0%,
+	100% {
+		opacity: 0;
+	}
+	50% {
+		opacity: 1;
+	}
+}
