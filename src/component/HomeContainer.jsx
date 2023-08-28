@@ -4,6 +4,14 @@ import React from 'react'
 import Delivery from '../img/delivery.png'
 import TypingAnimation from './TypingAnimation'
 import heroBg from '../img/heroBg.png'
+import I1 from '../img/i1.png'
+
+const local = Navigator.geolocation
+const formCurr = (value) =>
+	new Intl.NumberFormat(local, {
+		style: 'currency',
+		currency: 'NGN',
+	}).format(value)
 
 const HomeContainer = () => {
 	return (
@@ -44,8 +52,19 @@ const HomeContainer = () => {
 				</button>
 			</div>
 			<div className='py-2 flex-1 flex items-center relative'>
-				<img src={heroBg} alt='herobg' className='ml-auto h-650' />
-				<div className='w-full h-full absolute flex items-center justify-center'></div>
+				<img src={heroBg} alt='herobg' className='ml-auto md:h-370 lg:h-650' />
+				<div className='w-full h-full absolute flex top-0 left-0 items-center justify-center px-32 py-4'>
+					<div className='w-190 p-4 bg-cardOverlay backdrop-blur-md rounded-md flex flex-col items-center justify-center'>
+						<img src={I1} className='w-40 -mt-20' alt='I1' />
+						<p className='text-base font-semibold text-textColor'>Icecream</p>
+						<p className='text-sm text-lighttextGray font-semibold'>
+							Chocolate & Vanilla
+						</p>
+						<p className='text-sm font-semibold text-headingColor'>
+							{formCurr(200)}
+						</p>
+					</div>
+				</div>
 			</div>
 		</section>
 	)
