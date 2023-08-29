@@ -7,14 +7,22 @@ import {
 	MdCloudUpload,
 	MdDelete,
 	MdFoodBank,
-	MdAttachMoney,
+	MdOutlineMoney,
 } from 'react-icons/md'
 import { categories } from '../utils/data'
 import Loader from './Loader'
+import {
+	deleteObject,
+	getDownloadURL,
+	ref,
+	uploadBytesResumable,
+} from 'firebase/storage'
+import { storage } from '../firebase.config'
+import { saveItem } from '../utils/firebaseFunction'
 
 const CreateContainer = () => {
 	const [title, setTitle] = useState('')
-	const [calories, setCalories] = useState('')
+	// const [calories, setCalories] = useState('')
 	const [price, setPrice] = useState('')
 	const [category, setCategory] = useState(null)
 	const [imageAsset, setImageAsset] = useState(null)
@@ -23,10 +31,110 @@ const CreateContainer = () => {
 	const [msg, setMsg] = useState(null)
 	const [isLoading, setIsLoading] = useState(false)
 	const [{ foodItems }, dispatch] = useStateValue()
+	let uploadProgress
 
-	const uploadImage = () => {}
-	const deleteImage = () => {}
-	const saveDetails = () => {}
+	const uploadImage = (e) => {
+		setIsLoading(true)
+		const imageFile = e.target.files[0]
+		const storageRef = ref(storage, `Images/${Date.now()}-${imageFile.name}`)
+		const uploadTask = uploadBytesResumable(storageRef, imageFile)
+
+		uploadTask.on(
+			'state_changed',
+			(snapshot) => {
+				const uploadProgress =
+					(snapshot.bytesTransferred / snapshot.totalBytes) * 100
+			},
+			(err) => {
+				console.log(err)
+				setFields(true)
+				setMsg('Error while uplading, try again')
+				setAlertStatus('danger')
+				setTimeout(() => {
+					setFields(false)
+					setIsLoading(false)
+				}, 4000)
+			},
+			() => {
+				getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
+					setImageAsset(downloadURL)
+					setFields(true)
+					setIsLoading(false)
+					setMsg('Upload Sucessful')
+					setAlertStatus('sucess')
+					setTimeout(() => {
+						setFields(false)
+						setIsLoading(false)
+					}, 4000)
+				})
+			}
+		)
+	}
+
+	const deleteImage = () => {
+		setIsLoading(true)
+		const deleteRef = ref(storage, imageAsset)
+		deleteObject(deleteRef).then(() => {
+			setImageAsset(null)
+			setIsLoading(false)
+			setFields(true)
+			setMsg('Image deleted successfully')
+			setAlertStatus('success')
+			setTimeout(() => {
+				setFields(false)
+			}, 4000)
+		})
+	}
+	const saveDetails = () => {
+		setIsLoading(true)
+		try {
+			if (!title || !price || !imageAsset) {
+				setFields(true)
+
+				setMsg('Fields Cannot be Empty')
+				setAlertStatus('danger')
+				setTimeout(() => {
+					setFields(false)
+					setIsLoading(false)
+				}, 4000)
+			} else {
+				const data = {
+					id: `${Date.now()}`,
+					title: title,
+					imageURL: imageAsset,
+					category: category,
+					calories: calories,
+					qty: 1,
+					price: price,
+				}
+				saveItem(data)
+				setIsLoading(false)
+				setFields(true)
+				setMsg('Data Uploaded successfully')
+				clearData()
+				setAlertStatus('success')
+				setTimeout(() => {
+					setFields(false)
+				}, 4000)
+			}
+		} catch (error) {
+			console.log(error)
+			setFields(true)
+			setMsg('Error while uplading, try again')
+			setAlertStatus('danger')
+			setTimeout(() => {
+				setFields(false)
+				setIsLoading(false)
+			}, 4000)
+		}
+	}
+	const clearData = () => {
+		setTitle('')
+		setImageAsset(null)
+		setCalories('')
+		setPrice('')
+		setCategory('Select Category')
+	}
 
 	return (
 		<div className='w-full min-h-screen flex items-center justify-center'>
@@ -118,7 +226,7 @@ const CreateContainer = () => {
 				</div>
 
 				<div className='w-full flex flex-col md:flex-row items-center gap-3'>
-					<div className='w-full py-2 border-b border-gray-300 flex items-center gap-2'>
+					{/* <div className='w-full py-2 border-b border-gray-300 flex items-center gap-2'>
 						<MdFoodBank className='text-gray-700 text-2xl' />
 						<input
 							type='text'
@@ -128,10 +236,10 @@ const CreateContainer = () => {
 							placeholder='Calories'
 							className='w-full h-full text-lg bg-transparent outline-none border-none placeholder:text-gray-400 text-textColor'
 						/>
-					</div>
+					</div> */}
 
 					<div className='w-full py-2 border-b border-gray-300 flex items-center gap-2'>
-						<MdAttachMoney className='text-gray-700 text-2xl' />
+						<MdOutlineMoney className='text-gray-700 text-2xl' />
 						<input
 							type='text'
 							required

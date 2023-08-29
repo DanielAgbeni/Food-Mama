@@ -78,7 +78,8 @@ const HomeContainer = () => {
 								</p>
 
 								<p className='text-sm font-semibold text-headingColor'>
-									{formCurr(n.price)}
+									<span className='text-xs text-red-600'>₦</span>
+									{n.price}
 								</p>
 							</div>
 						))}

@@ -3,6 +3,7 @@
 import React from 'react'
 
 const Loader = () => {
+
 	return (
 		<div role='status'>
 			<svg
@@ -20,6 +21,11 @@ const Loader = () => {
 					fill='currentFill'
 				/>
 			</svg>
+			{/* <div className='w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700'>
+				<div
+					className='bg-blue-600 h-2.5 rounded-full'
+					style={{ width: `${onLoad}%` }}></div>
+			</div> */}
 		</div>
 	)
 }
