@@ -18,7 +18,8 @@ import {
 	uploadBytesResumable,
 } from 'firebase/storage'
 import { storage } from '../firebase.config'
-import { saveItem } from '../utils/firebaseFunction'
+import { getAllFoodItems, saveItem } from '../utils/firebaseFunction'
+import { actionType } from '../context/reducer'
 
 const CreateContainer = () => {
 	const [title, setTitle] = useState('')
@@ -127,6 +128,7 @@ const CreateContainer = () => {
 				setIsLoading(false)
 			}, 4000)
 		}
+		fetchData()
 	}
 	const clearData = () => {
 		setTitle('')
@@ -134,6 +136,16 @@ const CreateContainer = () => {
 		setCalories('')
 		setPrice('')
 		setCategory('Select Category')
+	}
+
+	const fetchData = async () => {
+		await getAllFoodItems().then((data) => {
+			dispatch({
+				type: actionType.SET_FOOD_ITEMS,
+				foodItems: data,
+			})
+			// console.log(data)
+		})
 	}
 
 	return (

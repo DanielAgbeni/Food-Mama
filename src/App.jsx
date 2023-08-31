@@ -5,8 +5,25 @@ import './App.css'
 import { Header, MainContainer, CreateContainer, Footer } from './component'
 import { Route, Routes } from 'react-router-dom'
 import { AnimatePresence } from 'framer-motion'
+import { useStateValue } from './context/StateProvider'
+import { useEffect } from 'react'
+import { getAllFoodItems } from './utils/firebaseFunction'
+import { actionType } from './context/reducer'
 
-function App() {
+const App = () => {
+	const [{ foodItems }, dispatch] = useStateValue()
+
+	const fetchData = async () => {
+		await getAllFoodItems().then((data) => {
+			dispatch({
+				type: actionType.SET_FOOD_ITEMS,
+				foodItems: data,
+			})
+		})
+	}
+	useEffect(() => {
+		fetchData()
+	}, [])
 	return (
 		<AnimatePresence>
 			<div className='w-screen h-auto flex flex-auto bg-primary'>
@@ -16,9 +33,9 @@ function App() {
 						<Route path='/*' element={<MainContainer />} />
 						<Route path='/adminPanel' element={<CreateContainer />} />
 					</Routes>
-					<Footer />
 				</main>
 			</div>
+			<Footer className=' bg-primary' />
 		</AnimatePresence>
 	)
 }

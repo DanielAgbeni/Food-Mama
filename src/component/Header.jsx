@@ -79,7 +79,7 @@ const Header = () => {
 						<li className='cursor-pointer text-base hover:text-headingColor text-textColor duration-100 transition-all ease-in-out'>
 							Menu
 						</li>
-						<li className='cursor-pointer text-base hover:text-headingColor text-textColor duration-100 transition-all ease-in-out'>
+						<li className='cursor-pointer text-base hover:text-headingColor  text-textColor duration-100 transition-all ease-in-out'>
 							About Us
 						</li>
 						<li className='cursor-pointer text-base hover:text-headingColor text-textColor duration-100 transition-all ease-in-out'>
