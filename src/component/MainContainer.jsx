@@ -5,6 +5,7 @@ import Delivery from '../img/delivery.png'
 import HomeContainer from './HomeContainer'
 import { motion } from 'framer-motion'
 import { MdChevronLeft, MdChevronRight } from 'react-icons/md'
+import RowContainer from './RowContainer'
 
 const MainContainer = () => {
 	return (
@@ -30,6 +31,7 @@ const MainContainer = () => {
 						</motion.div>
 					</div>
 				</div>
+				<RowContainer />
 			</section>
 		</div>
 	)
