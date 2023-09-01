@@ -23,7 +23,7 @@ import { actionType } from '../context/reducer'
 
 const CreateContainer = () => {
 	const [title, setTitle] = useState('')
-	// const [calories, setCalories] = useState('')
+	const [calories, setCalories] = useState('')
 	const [price, setPrice] = useState('')
 	const [category, setCategory] = useState(null)
 	const [imageAsset, setImageAsset] = useState(null)
@@ -89,7 +89,7 @@ const CreateContainer = () => {
 	const saveDetails = () => {
 		setIsLoading(true)
 		try {
-			if (!title || !price || !imageAsset) {
+			if (!title || !calories || !imageAsset || !price || !category) {
 				setFields(true)
 
 				setMsg('Fields Cannot be Empty')
@@ -112,11 +112,11 @@ const CreateContainer = () => {
 				setIsLoading(false)
 				setFields(true)
 				setMsg('Data Uploaded successfully')
-				clearData()
 				setAlertStatus('success')
 				setTimeout(() => {
 					setFields(false)
 				}, 4000)
+				clearData()
 			}
 		} catch (error) {
 			console.log(error)
@@ -238,7 +238,7 @@ const CreateContainer = () => {
 				</div>
 
 				<div className='w-full flex flex-col md:flex-row items-center gap-3'>
-					{/* <div className='w-full py-2 border-b border-gray-300 flex items-center gap-2'>
+					<div className='w-full py-2 border-b border-gray-300 flex items-center gap-2'>
 						<MdFoodBank className='text-gray-700 text-2xl' />
 						<input
 							type='text'
@@ -248,7 +248,7 @@ const CreateContainer = () => {
 							placeholder='Calories'
 							className='w-full h-full text-lg bg-transparent outline-none border-none placeholder:text-gray-400 text-textColor'
 						/>
-					</div> */}
+					</div>
 
 					<div className='w-full py-2 border-b border-gray-300 flex items-center gap-2'>
 						<MdOutlineMoney className='text-gray-700 text-2xl' />

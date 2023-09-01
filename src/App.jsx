@@ -21,9 +21,11 @@ const App = () => {
 			})
 		})
 	}
+
 	useEffect(() => {
 		fetchData()
 	}, [])
+
 	return (
 		<AnimatePresence>
 			<div className='w-screen h-auto flex flex-auto bg-primary'>
