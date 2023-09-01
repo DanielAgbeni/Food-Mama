@@ -1,7 +1,7 @@
 /** @format */
 
 import React, { useEffect, useRef, useState } from 'react'
-import { MdShoppingBasket } from 'react-icons/md'
+import { MdShoppingCart } from 'react-icons/md'
 import { motion } from 'framer-motion'
 import NotFound from '../img/NotFound.svg'
 import { useStateValue } from '../context/StateProvider'
@@ -57,7 +57,7 @@ const RowContainer = ({ flag, data, scrollValue }) => {
 								whileTap={{ scale: 0.75 }}
 								className='w-8 h-8 rounded-full bg-red-600 flex items-center justify-center cursor-pointer hover:shadow-md -mt-8'
 								onClick={() => setItems([...cartItems, item])}>
-								<MdShoppingBasket className='text-white' />
+								<MdShoppingCart className='text-white' />
 							</motion.div>
 						</div>
 
