@@ -229,7 +229,9 @@ const Header = () => {
 									onClick={!user ? signIn : ''}
 									title={user ? user.displayName : 'Not Signed in'}
 								/>
-								<p>{user ? user.displayName : 'Not Signed in'}</p>
+								<p className='flex flex-col items-center justify-center'>
+									{user ? user.displayName : 'Not Signed in'}
+								</p>
 							</div>
 							{!user ? (
 								<p
