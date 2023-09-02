@@ -1,7 +1,7 @@
 /** @format */
 
 import React, { useEffect, useRef } from 'react'
-import Delivery from '../img/delivery.png'
+
 import HomeContainer from './HomeContainer'
 import { motion } from 'framer-motion'
 import { MdChevronLeft, MdChevronRight } from 'react-icons/md'
@@ -9,6 +9,7 @@ import RowContainer from './RowContainer'
 import { useStateValue } from '../context/StateProvider'
 import { useState } from 'react'
 import MenuContainer from './MenuContainer'
+import CartContainer from './CartContainer'
 
 const MainContainer = () => {
 	const [{ foodItems, cartShow }, dispatch] = useStateValue()
@@ -44,6 +45,7 @@ const MainContainer = () => {
 					data={foodItems?.filter((n) => n.category === 'fruits')}
 				/>
 				<MenuContainer />
+				{cartShow && <CartContainer />}
 			</section>
 		</div>
 	)
