@@ -140,8 +140,8 @@ const Header = () => {
 										whileTap={{ scale: 0.8 }}
 										src={user ? user.photoURL : Avatar}
 										alt='Avatar'
-										className='w-10 min-w-[60px] h-10 min-h-[60px] rounded-full drop-shadow-2xl cursor-pointer '
-										onClick={signIn}
+										className='w-10 min-w-[60px] h-10 min-h-[60px] mt-3 rounded-full drop-shadow-3xl cursor-pointer '
+										onClick={!user ? signIn : ''}
 										title={user ? user.displayName : 'Not Signed in'}
 									/>
 									<p>{user ? user.displayName : 'Not Signed in'}</p>
