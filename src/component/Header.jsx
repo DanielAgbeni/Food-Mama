@@ -220,6 +220,26 @@ const Header = () => {
 							animate={{ opacity: 1, scale: 1 }}
 							exit={{ opacity: 0, scale: 0.6 }}
 							className='w-40 bg-gray-50 shadow-xl rounded-lg flex flex-col absolute top-12 -right-3 '>
+							<div className=' w-full flex flex-col items-center justify-center'>
+								<motion.img
+									whileTap={{ scale: 0.8 }}
+									src={user ? user.photoURL : Avatar}
+									alt='Avatar'
+									className='w-10 min-w-[60px] h-10 min-h-[60px] mt-3 rounded-full drop-shadow-3xl cursor-pointer '
+									onClick={!user ? signIn : ''}
+									title={user ? user.displayName : 'Not Signed in'}
+								/>
+								<p>{user ? user.displayName : 'Not Signed in'}</p>
+							</div>
+							{!user ? (
+								<p
+									className='flex px-4 py-2 item-center gap-3 cursor-pointer hover:bg-slate-200 transition-all duration-100 ease-in-out text-textColor text-base'
+									onClick={signIn}>
+									Sign In <MdLogin />
+								</p>
+							) : (
+								''
+							)}
 							{user && user.uid === '102019565432607253558' ? (
 								<Link to={'./adminPanel'}>
 									<p
