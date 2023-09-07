@@ -6,7 +6,6 @@ import './TypingAnimation.css' // Import your CSS file
 const TypingAnimation = () => {
 	const [text, setText] = useState('')
 	const fullText = 'The Fastest Food Delievery in'
-	const newText = 'Your City'
 
 	useEffect(() => {
 		let currentIndex = 0

@@ -100,9 +100,11 @@ const Header = () => {
 								Menu
 							</li>
 						</a>
-						<li className='cursor-pointer text-base hover:text-headingColor  text-textColor duration-100 transition-all ease-in-out'>
-							About Us
-						</li>
+						<Link to={'/about'}>
+							<li className='cursor-pointer text-base hover:text-headingColor  text-textColor duration-100 transition-all ease-in-out'>
+								About Us
+							</li>
+						</Link>
 						<li className='cursor-pointer text-base hover:text-headingColor text-textColor duration-100 transition-all ease-in-out'>
 							Service
 						</li>

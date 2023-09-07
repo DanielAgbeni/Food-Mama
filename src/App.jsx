@@ -2,7 +2,13 @@
 
 import { useState } from 'react'
 import './App.css'
-import { Header, MainContainer, CreateContainer, Footer } from './component'
+import {
+	Header,
+	MainContainer,
+	CreateContainer,
+	Footer,
+	About,
+} from './component'
 import { Route, Routes } from 'react-router-dom'
 import { AnimatePresence } from 'framer-motion'
 import { useStateValue } from './context/StateProvider'
@@ -34,6 +40,7 @@ const App = () => {
 					<Routes>
 						<Route path='/*' element={<MainContainer />} />
 						<Route path='/adminPanel' element={<CreateContainer />} />
+						<Route path='/about' element={<About />} />
 					</Routes>
 				</main>
 			</div>
