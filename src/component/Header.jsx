@@ -95,9 +95,11 @@ const Header = () => {
 								Home
 							</li>
 						</Link>
-						<li className='cursor-pointer text-base hover:text-headingColor text-textColor duration-100 transition-all ease-in-out'>
-							Menu
-						</li>
+						<a href='#menu'>
+							<li className='cursor-pointer text-base hover:text-headingColor text-textColor duration-100 transition-all ease-in-out'>
+								Menu
+							</li>
+						</a>
 						<li className='cursor-pointer text-base hover:text-headingColor  text-textColor duration-100 transition-all ease-in-out'>
 							About Us
 						</li>
@@ -262,9 +264,11 @@ const Header = () => {
 										Home
 									</li>
 								</Link>
-								<li className='cursor-pointer text-base hover:text-headingColor text-textColor duration-100 transition-all ease-in-out px-4 py-2 '>
-									Menu
-								</li>
+								<a href='#menu'>
+									<li className='cursor-pointer text-base hover:text-headingColor text-textColor duration-100 transition-all ease-in-out px-4 py-2 '>
+										Menu
+									</li>
+								</a>
 								<li className='cursor-pointer text-base hover:text-headingColor text-textColor duration-100 transition-all ease-in-out px-4 py-2 '>
 									About Us
 								</li>
