@@ -6,7 +6,7 @@ const About = () => {
 	return (
 		<div className='w-full h-auto flex flex-col items-center justify-center'>
 			<div className='mx-0 p-0 flex flex-col items-center justify-center md:p-0'>
-				<h2 className='text-4xl font-semibold capitalize mb-10 text-headingColor relative before:absolute before:rounded-lg before:content before:w-32 before:h-1 before:-bottom-2 before:left-[50%] before:mx-auto before:-translate-x-[50%]  before:bg-gradient-to-tr from-orange-400 to-orange-600 transition-all ease-in-out duration-100'>
+				<h2 className='text-2xl font-semibold capitalize text-headingColor mx-4 relative before:absolute before:rounded-lg before:content before:w-32 before:h-1 before:-bottom-0 before:left-0 before:bg-gradient-to-tr from-orange-400 to-orange-600 transition-all ease-in-out duration-100'>
 					About Food Mama
 				</h2>
 				<p className='lg:mx-80px  px-4 text-center text-xl font-normal mb-6 md:mx-1'>
@@ -16,7 +16,7 @@ const About = () => {
 					just a restaurant; it's a celebration of love for food, family, and
 					community.
 				</p>
-				<h2 className='text-4xl font-semibold capitalize mb-10 text-headingColor relative before:absolute before:rounded-lg before:content before:w-32 before:h-1 before:-bottom-2 before:left-[50%] before:mx-auto before:-translate-x-[50%]  before:bg-gradient-to-tr from-orange-400 to-orange-600 transition-all ease-in-out duration-100'>
+				<h2 className='text-2xl font-semibold capitalize text-headingColor mx-4 relative before:absolute before:rounded-lg before:content before:w-12 before:h-1 before:-bottom-0 before:left-0 before:bg-gradient-to-tr from-orange-400 to-orange-600 transition-all ease-in-out duration-100'>
 					Our Story
 				</h2>
 				<p className='mx-80px  px-4 text-center text-xl font-normal md:mx-1'>
@@ -33,7 +33,7 @@ const About = () => {
 					sustenance; it's a source of joy and connection that brings people
 					together.
 				</p>
-				<h2 className='text-4xl font-semibold capitalize mb-10 text-headingColor relative before:absolute before:rounded-lg before:content before:w-32 before:h-1 before:-bottom-2 before:left-[50%] before:mx-auto before:-translate-x-[50%]  before:bg-gradient-to-tr from-orange-400 to-orange-600 transition-all ease-in-out duration-100'>
+				<h2 className='text-2xl font-semibold capitalize text-headingColor mx-4 relative before:absolute before:rounded-lg before:content before:w-32 before:h-1 before:-bottom-0 before:left-0 before:bg-gradient-to-tr from-orange-400 to-orange-600 transition-all ease-in-out duration-100'>
 					The Food Experience
 				</h2>
 				<p className='mx-80px  px-4 text-center text-xl font-normal md:mx-1'>
@@ -48,7 +48,7 @@ const About = () => {
 					hearty plate of Mama's famous lasagna, a zesty Thai curry, or a
 					perfectly grilled steak, we're here to satisfy your cravings.
 				</p>
-				<h2 className='text-4xl font-semibold capitalize mb-10 text-headingColor relative before:absolute before:rounded-lg before:content before:w-32 before:h-1 before:-bottom-2 before:left-[50%] before:mx-auto before:-translate-x-[50%]  before:bg-gradient-to-tr from-orange-400 to-orange-600 transition-all ease-in-out duration-100'>
+				<h2 className='text-2xl font-semibold capitalize text-headingColor mx-4 relative before:absolute before:rounded-lg before:content before:w-32 before:h-1 before:-bottom-0 before:left-0 before:bg-gradient-to-tr from-orange-400 to-orange-600 transition-all ease-in-out duration-100'>
 					Warm and Welcoming Atmosphere
 				</h2>
 				<p className='mx-80px  px-4 text-center text-xl font-normal mb-6 md:mx-1'>
@@ -58,7 +58,7 @@ const About = () => {
 					our friendly staff and warm decor create the perfect backdrop for
 					memorable moments.
 				</p>
-				<h2 className='text-4xl font-semibold capitalize mb-10 text-headingColor relative before:absolute before:rounded-lg before:content before:w-32 before:h-1 before:-bottom-2 before:left-[50%] before:mx-auto before:-translate-x-[50%]  before:bg-gradient-to-tr from-orange-400 to-orange-600 transition-all ease-in-out duration-100'>
+				<h2 className='text-2xl font-semibold capitalize text-headingColor mx-4 relative before:absolute before:rounded-lg before:content before:w-32 before:h-1 before:-bottom-0 before:left-0 before:bg-gradient-to-tr from-orange-400 to-orange-600 transition-all ease-in-out duration-100'>
 					Community and Sustainability
 				</h2>
 				<p className='mx-80px  px-4 text-center text-xl font-normal mb-6 md:mx-1'>
@@ -67,7 +67,7 @@ const About = () => {
 					charities, ensuring that our commitment to sustainability goes beyond
 					the kitchen.
 				</p>
-				<h2 className='text-4xl font-semibold capitalize mb-10 text-headingColor relative before:absolute before:rounded-lg before:content before:w-32 before:h-1 before:-bottom-2 before:left-[50%] before:mx-auto before:-translate-x-[50%]  before:bg-gradient-to-tr from-orange-400 to-orange-600 transition-all ease-in-out duration-100'>
+				<h2 className='text-2xl font-semibold capitalize text-headingColor mx-4 relative before:absolute before:rounded-lg before:content before:w-32 before:h-1 before:-bottom-0 before:left-0 before:bg-gradient-to-tr from-orange-400 to-orange-600 transition-all ease-in-out duration-100'>
 					Join Us at Food Mama
 				</h2>
 				<p className='mx-80px  px-4 text-center text-xl font-normal mb-6  md:mx-1'>

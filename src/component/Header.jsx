@@ -19,18 +19,7 @@ const Header = () => {
 	const [{ user, cartShow, cartItems }, dispatch] = useStateValue()
 	const [isMenu, setIsMenu] = useState(false)
 	const Login = () => {
-		// if (!user) {
-		// 	const {
-		// 		user: { refreshToken, providerData },
-		// 	} = await signInWithPopup(auth, provider)
-		// 	dispatch({
-		// 		type: actionType.SET_USER,
-		// 		user: providerData[0],
-		// 	})
-		// 	localStorage.setItem('user', JSON.stringify(providerData[0]))
-		// } else {
 		setIsMenu(!isMenu)
-		// }
 	}
 	const signIn = async () => {
 		const {
@@ -95,7 +84,7 @@ const Header = () => {
 								Home
 							</li>
 						</Link>
-						<a href='#menu'>
+						<a href='/#menu'>
 							<li className='cursor-pointer text-base hover:text-headingColor text-textColor duration-100 transition-all ease-in-out'>
 								Menu
 							</li>
@@ -105,9 +94,11 @@ const Header = () => {
 								About Us
 							</li>
 						</Link>
-						<li className='cursor-pointer text-base hover:text-headingColor text-textColor duration-100 transition-all ease-in-out'>
-							Service
-						</li>
+						{/* <Link to={'/service'}>
+							<li className='cursor-pointer text-base hover:text-headingColor text-textColor duration-100 transition-all ease-in-out'>
+								Service
+							</li>
+						</Link> */}
 					</motion.ul>
 					<div
 						className='relative flex items-center justify-center'
@@ -266,19 +257,19 @@ const Header = () => {
 										Home
 									</li>
 								</Link>
-								<a href='#menu'>
+								<Link to={'#menu'}>
 									<li className='cursor-pointer text-base hover:text-headingColor text-textColor duration-100 transition-all ease-in-out px-4 py-2 '>
 										Menu
 									</li>
-								</a>
+								</Link>
 								<Link to={'/about'}>
 									<li className='cursor-pointer text-base hover:text-headingColor text-textColor duration-100 transition-all ease-in-out px-4 py-2 '>
 										About Us
 									</li>
 								</Link>
-								<li className='cursor-pointer text-base hover:text-headingColor text-textColor duration-100 transition-all ease-in-out px-4 py-2 '>
+								{/* <li className='cursor-pointer text-base hover:text-headingColor text-textColor duration-100 transition-all ease-in-out px-4 py-2 '>
 									Service
-								</li>
+								</li> */}
 							</ul>
 							<p
 								className='m-2 p-2 rounded-md shadow-md flex item-center justify-center bg-gray-300 cursor-pointer hover:bg-slate-200 transition-all duration-100 ease-in-out  text-textColor text-base'

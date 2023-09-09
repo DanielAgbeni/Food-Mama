@@ -8,6 +8,7 @@ import {
 	CreateContainer,
 	Footer,
 	About,
+	Service,
 } from './component'
 import { Route, Routes } from 'react-router-dom'
 import { AnimatePresence } from 'framer-motion'
@@ -41,6 +42,7 @@ const App = () => {
 						<Route path='/*' element={<MainContainer />} />
 						<Route path='/adminPanel' element={<CreateContainer />} />
 						<Route path='/about' element={<About />} />
+						<Route path='/service' element={<Service />} />
 					</Routes>
 				</main>
 			</div>
